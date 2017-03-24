@@ -1,0 +1,36 @@
+/*
+FileReader & FileWriter
+	以字符为单位读取数据
+*/
+import java.io.*;
+public class TestReaderAndWriter
+{
+	public static void main(String[] args)
+	{
+		FileReader in = null;
+		FileWriter out = null;
+		try
+		{
+			in = new FileReader ("e:/java/javatest/IO/TestReaderAndWriter.java");
+			out = new FileWriter ("e:/java/javatest/IO/WriterTesting.txt");
+			int b = 0;
+			while((b = in.read()) != -1)
+			{
+				System.out.printf("%c",b);
+				out.write(b);
+			}
+			in.close();
+			out.close();
+		}
+		catch (FileNotFoundException e1)
+		{
+			System.out.println("找不到指定文件");
+			System.exit(-1);
+		}
+		catch (IOException e2)
+		{
+			System.out.println("文件读取错误");
+			System.exit(-1);
+		}
+	}
+}

@@ -1,4 +1,4 @@
 attrib -h *.class
 attrib -h *.bak
-del  *.class
-del  *.bak
+del  /s *.class
+del  /s *.bak

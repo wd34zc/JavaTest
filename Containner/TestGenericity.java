@@ -1,8 +1,25 @@
 /*
 泛型 <>
-	
+	把运行时的异常提前到编译时识别	
 */
 import java.util.*;
+class Apple<T> //自定义带泛型的类
+{
+	private T info;
+	public Apple(){}
+	public Apple(T info)
+	{
+		this.info = info;
+	}
+	public void setInfo(T info)
+	{
+		this.info = info;
+	}
+	public T getInfo()
+	{
+		return info;
+	}
+}
 public class TestGenericity
 {
 	public static void main(String[] args)
@@ -10,7 +27,7 @@ public class TestGenericity
 		List<String> l = new ArrayList<String>();
 		l.add("hello"); //自动打包
 		l.add("world");
-//		l.add(5); //不能传入除String类型的值
+		//l.add(5); //不能传入除String类型的值
 		System.out.println(l);
 
 		Iterator<String> i = l.iterator();
@@ -26,5 +43,10 @@ public class TestGenericity
 		l2.add(-3);
 		l2.add(9);
 		System.out.println(l2);
+
+		Apple<String> a = new Apple<>("苹果");
+			System.out.println(a.getInfo());
+		Apple<Integer> b = new Apple<>(5);
+			System.out.println(b.getInfo());
 	}
 }
