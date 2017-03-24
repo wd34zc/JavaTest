@@ -12,10 +12,10 @@ public class TestBuffered
 			BufferedReader br = new BufferedReader(new FileReader("e:/java/javatest/IO/TestBuffered.java"));
 			BufferedWriter bw = new BufferedWriter(new FileWriter("e:/java/javatest/IO/TestBuffered.txt"));
 			String b = null;
-			while((b=br.readLine()) != null)
+			while((b=br.readLine()) != null) //按行来读取文件
 			{
 				bw.write(b);
-				bw.newLine();
+				bw.newLine(); //写入一个回车符到文件
 				System.out.println(b);
 			}
 			br.close();
